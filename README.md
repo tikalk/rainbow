@@ -1,3 +1,3 @@
 # rainbow
-Developer colorful Personal CI Environment
+Developer Colorful Personal CI Environment
 ![image](logo/rainbow-logo.jpg)
