@@ -4,3 +4,4 @@ docker-compose.yml
 tikal-rainbow-*
 *.iml
 .idea/
+target/
