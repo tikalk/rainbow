@@ -1,95 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script
-src="http://maps.googleapis.com/maps/api/js">
-</script>
 
-<script>
-
-
-var xmlhttp = new XMLHttpRequest();
-var url = "http://localhost:8080/rainbow/";
-
-xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        myFunction(xmlhttp.responseText);
-    }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-
-function myFunction(response) {
-    var arr = JSON.parse(response);
-    var i;
-    var out = "<table>";
-
-    for(i = 0; i < arr.length; i++) {
-        out += "<tr><td>" +
-        arr[i].lon +
-        "</td><td>" +
-        arr[i].lat +
-        "</td><td>" +
-        arr[i].type +
-        "</td></tr>";
-    }
-    out += "</table>";
-alert("hello");
-    document.getElementById("id01").innerHTML = out;
-}
+    <script>
 
 
 
+//        var lon2 = 34.820850;//rainbows[0].lon;
+//        var lat2 = 32.058742;//rainbows[0].lat;
+//
+//
+//        var lon1 = 34.920850;//rainbows[0].lon;
+//        var lat1 = 32.158742;//rainbows[0].lat;
+
+//        var myCenter = new google.maps.LatLng(32.058742, 34.620850);
+        //var myPoint=new google.maps.LatLng(32.058742,34.820850);
+//        var myPoint1 = new google.maps.LatLng(lat1, lon1);
+//        var myPoint2 = new google.maps.LatLng(lat2, lon2);
 
 
-var lon2 = 34.820850;//rainbows[0].lon;
-var lat2 = 32.058742;//rainbows[0].lat;
 
-
-var lon1 = 34.920850;//rainbows[0].lon;
-var lat1 = 32.158742;//rainbows[0].lat;
-
-var myCenter=new google.maps.LatLng(32.058742,34.620850);
-//var myPoint=new google.maps.LatLng(32.058742,34.820850);
-var myPoint1=new google.maps.LatLng(lat1,lon1);
-var myPoint2=new google.maps.LatLng(lat2,lon2);
-
-var marker;
-
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:10,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker1=new google.maps.Marker({
-  position:myPoint1,
-  animation:google.maps.Animation.BOUNCE,
-    icon:'/rainbow-cloud-icon.png'
-  });
-
-var marker2=new google.maps.Marker({
-  position:myPoint2,
-  animation:google.maps.Animation.BOUNCE,
-    icon:'/rainbow-cloud-icon.png'
-  });
-
-marker1.setMap(map);
-marker2.setMap(map);
-
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+//        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 
 <body>
 <div id="googleMap" style="width:500px;height:380px;"></div>
-<div id="id01" />
+<div id="id01"/>
+<script>
+    //var myCenter = new google.maps.LatLng(32.058742, 34.620850);
+    var rainbows;
+
+    function initialize() {
+
+        var xmlhttp = new XMLHttpRequest();
+        var url = "http://localhost:8080/rainbow/";
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                getLatLon(xmlhttp.responseText);
+            }
+        }
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+
+        function getLatLon(response) {
+            rainbows = JSON.parse(response);
+
+            var mapProp = {
+                center: new google.maps.LatLng(32.058742, 34.620850),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var lon = rainbows[0].lon;
+            var lat = rainbows[0].lat;
+
+console.log(lon)
+console.log(lat)
+            var marker = new google.maps.Marker(
+                    {
+                        position: new google.maps.LatLng(lat, lon),
+                        animation: google.maps.Animation.BOUNCE,
+                        icon: '/rainbow-cloud-icon.png'
+                    }
+            );
+
+
+            marker.setMap(map);
+
+
+//console.log("hh");
+//console.log(rainbows);
+        }
+
+
+
+
+    }
+</script>
+<script
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCo99IPaWLY52eKbNGvxz_fvyThER_0uug&callback=initialize">
+</script>
+
+
 </body>
 </html>
 
