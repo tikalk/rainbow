@@ -1,9 +1,9 @@
 # rainbow
 ## Developer Colorful Personal CI Environment
 
-![image](logo/rainbow-logo.jpg =400x230)
+![image](logo/rainbow-logo-small.jpg)
 
-## Pre-requisits
+## Pre-requisites
 
 ### All OS types
 
