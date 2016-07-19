@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name                  = 'tikal-rainbow'
-  s.version               = '0.0.0'
+  s.version               = '0.0.1'
   s.required_ruby_version = '>= 2.1.0'
   s.date                  = '2016-07-19'
   s.summary               = "Rainbow: developer personal dev env"
