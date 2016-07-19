@@ -37,5 +37,4 @@ public class RainbowController {
         return HttpStatus.ACCEPTED;
     }
 
-
 }

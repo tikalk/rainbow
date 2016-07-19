@@ -1,5 +1,5 @@
 app/Application.class
-app/controller/RainbowController.class
-app/model/RainbowType.class
 app/model/RainbowModel.class
 app/repository/RainbowRepository.class
+app/controller/RainbowController.class
+app/model/RainbowType.class
