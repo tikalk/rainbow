@@ -50,5 +50,5 @@ when "image"
 when "run"
 	puts "run"
 else
-	puts "WTF?!?!?"
+	puts "WTF?!?!? The only options are 'init', 'image' & 'run'"
 end
