@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa3bc75-0eac-4f1b-bac7-8305e4b347bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../demo-app/src/main/resources/static/rainbow-cloud-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../demo-app/src/main/resources/static/rainbow-maps.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../demo-app/rainbow-maps.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../logo/rainbow-cloud-icon.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../demo-app/target/demo-app-0.1.jar" afterPath="$PROJECT_DIR$/../demo-app/target/demo-app-0.1.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../demo-app/target/demo-app-0.1.jar.original" afterPath="$PROJECT_DIR$/../demo-app/target/demo-app-0.1.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../demo-app/src/main/java/app/controller/RainbowController.java" afterPath="$PROJECT_DIR$/../demo-app/src/main/java/app/controller/RainbowController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../demo-app/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/../demo-app/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../demo-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/../demo-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -689,12 +684,20 @@
       <updated>1468913485023</updated>
       <workItem from="1468913486377" duration="1873000" />
       <workItem from="1468917350812" duration="2912000" />
-      <workItem from="1468922001286" duration="4095000" />
+      <workItem from="1468922001286" duration="4141000" />
     </task>
+    <task id="LOCAL-00001" summary="add client">
+      <created>1468929065428</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1468929065428</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8880000" />
+    <option name="totallyTimeSpent" value="8926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="30" width="1368" height="739" extended-state="6" />
@@ -735,6 +738,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add client" />
+    <option name="LAST_COMMIT_MESSAGE" value="add client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
