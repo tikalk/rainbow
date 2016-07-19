@@ -1,0 +1,5 @@
+dependencies:
+  - openjdk-7-jre
+  - ruby
+
+run: ruby /opt/rainbow/rainbow.rb
