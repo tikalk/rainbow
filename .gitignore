@@ -1,5 +1,6 @@
 Dockerfile
 Rainbowfile
 docker-compose.yml
+rainbow-*
 *.iml
 .idea/
