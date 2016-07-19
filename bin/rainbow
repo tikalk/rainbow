@@ -83,7 +83,7 @@ when "image"
 when "compose"
 	compose
 when "run"
-	puts "run"
+	run
 else
 	puts "WTF?!?!? The only options are 'init', 'image', 'compose' & 'run'"
 end
