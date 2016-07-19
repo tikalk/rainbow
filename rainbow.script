@@ -1,0 +1,89 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'erb'
+
+command = ARGV[0]
+
+#Create a template Rainbowfile
+def init
+  rainbow_file = %{
+#Rainbowfile template
+dependencies:
+  - openjdk-7-jre
+  - ruby
+
+run: ruby /opt/rainbow/rainbow.rb
+}
+  IO.write("Rainbowfile", rainbow_file)
+end 
+
+def image
+	yaml = IO.read("Rainbowfile")
+    obj = YAML.load(yaml)
+
+	dependencies = obj["dependencies"]
+	run = obj["run"]
+
+	binding.local_variable_set(:dependencies, dependencies)
+
+	template = %{
+FROM ubuntu:14.04
+RUN apt-get update && apt-get install -y --force-yes <% dependencies.each do |dependency| %><%= dependency %> <% end %>\n
+CMD <%= run %>
+	}
+	docker_file = ERB.new(template, 0, '>').result(binding).strip
+
+	IO.write("Dockerfile", docker_file)
+	system("docker build -t rainbow .")
+end
+
+def compose
+	compose = %{
+version: '2'
+services:
+    frontend:
+        image: {imagename}
+        ports:
+            - "8080"
+        environment:
+            - KEY=value
+        volumes:
+            - /home/user/data:/opt/rainbow
+        networks:
+            frontend:
+                aliases:
+                    - frontend
+
+    backend:
+        image: {imagename}
+        hostname: gateway
+        environment:
+            KEY: value
+        networks:
+            frontend:
+                aliases:
+                    - backend
+networks:
+    rainbow:
+        driver: bridge
+}
+	IO.write("docker-compose.yml", compose)
+end
+
+def run
+	system("docker compose up -d")
+end
+
+case command
+when "init"
+	init
+when "image"
+	image
+when "compose"
+	compose
+when "run"
+	puts "run"
+else
+	puts "WTF?!?!? The only options are 'init', 'image', 'compose' & 'run'"
+end
