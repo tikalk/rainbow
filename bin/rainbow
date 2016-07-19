@@ -51,7 +51,7 @@ services:
         volumes:
             - /home/user/data:/opt/rainbow
         networks:
-            frontend:
+            rainbow:
                 aliases:
                     - frontend
 
@@ -61,7 +61,7 @@ services:
         environment:
             KEY: value
         networks:
-            frontend:
+            rainbow:
                 aliases:
                     - backend
 networks:
