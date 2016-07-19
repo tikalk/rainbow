@@ -72,7 +72,7 @@ networks:
 end
 
 def run
-	system("docker compose up -d")
+	system("docker-compose up -d")
 end
 
 case command

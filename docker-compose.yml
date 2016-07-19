@@ -1,27 +1,15 @@
+
 version: '2'
 services:
     frontend:
-        image: {imagename}
-        ports:
-            - "8080"
-        environment:
-            - KEY=value
+        image: rainbow
         volumes:
-            - /home/user/data:/opt/rainbow
+            - ${PWD}:/opt/rainbow
         networks:
-            frontend:
+            rainbow:
                 aliases:
                     - frontend
 
-    backend:
-        image: {imagename}
-        hostname: gateway
-        environment:
-            KEY: value
-        networks:
-            frontend:
-                aliases:
-                    - backend
 networks:
     rainbow:
         driver: bridge
